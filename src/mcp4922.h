@@ -24,8 +24,10 @@ class MCP4922 {
     public:
         /* Creates a MCP4922 given a SPI port */
         MCP4922(SPI* spi, PinName ldac);
-        /* Creates a MCP4922 given pin namthis->m_spiFrequency;es */
+        /* Creates a MCP4922 given pin names */
         MCP4922(PinName mosi, PinName miso, PinName sclk, PinName ssel, PinName ldac);
+        /* Creates a MCP4922 given pin names */
+        MCP4922(PinName mosi, PinName miso, PinName sclk, PinName ssel, PinName ldac, mbed::use_gpio_ssel_t);
         /* Destructs a MCP4922 */
         ~MCP4922();
 
@@ -36,7 +38,7 @@ class MCP4922 {
         uint32_t getFrequency() const;
         /* Set the frequency */
         void setFrequency(uint32_t freq);
-
+    
         /* Write */
         void write(uint8_t dac, uint16_t data, bool doublegain = false, bool buffered = false, bool shutdown = false);
         /* Update */

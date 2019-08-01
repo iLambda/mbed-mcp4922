@@ -1,4 +1,5 @@
 {
+    "name": "mbed-mcp4922",
     "build": {
         "flags": [
             "-std=c++11"
